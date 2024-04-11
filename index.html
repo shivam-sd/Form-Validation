@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form action="check.html" onsubmit="data()">
+UserName : <input type="text" id="n1">
+<br>
+<br>
+Contact : <input type="text" id="n2">
+<br>
+<br>
+password : <input type="password" id="n3">
+<br>
+<br>
+confirm password : <input type="password" id="n4">
+<br>
+<br>
+<!-- <a href="check.html"> -->
+    <input type="submit" id="n5">
+</form>
+
+
+<script> 
+
+function data() {
+
+let a = document.getElementById("n1").value;
+let b = document.getElementById("n2").value;
+let c = document.getElementById("n3").value;
+let d = document.getElementById("n4").value;
+let e = document.getElementById("n5");
+
+// e.addEventListener("click",() => {
+    if(a == "" || b == "" || c == "" || d == ""){
+        alert("All Field are meditory");
+        return false;
+    }
+    else if (b.length<10 || b.length>10){
+        alert("Contact Number is Should be 10 Digit");
+        return false;
+    }
+    else if (isNaN(b)){
+        alert("only type number");
+        return false;
+    }
+    else if(c!=d){
+        alert("pleace enter same password");
+        return false;
+    }
+    else{
+        true;
+    }
+}
+// });
+
+</script>
+</body>
+</html>
